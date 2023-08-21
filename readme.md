@@ -1,45 +1,25 @@
-# Template
+# {{APPLICATION}}
 
-Use this template to create the base of your new project.
+# TEMPLATE
+1. Create project directory
+2. `git init && git pull git@github.com:acryps/template.git`
+3. Replace `{{APPLICATION}}` and `{{PORT}}` everywhere
+4. Replace favicon
+5. Create project on git remote
+6. Remove this section
 
-It consists of a server and a web client. It utilizes vldom, vlserver and vlquery and is also setup to run on vlcluster.
+## Server
+Backend
 
-
-## Clone into your project
-Go to your repository folder, open a terminal and run the following commands.
-
+Development (no auto reload)
 ```
-mkdir <your-project-name>
-cd <your-project-name>
-
-git init
-git pull git@github.com:acryps/template.git
-```
-
-Now you have the whole code-base in your project and just need to push it to your remote git.
-
-**Change the name of your project in the `package.json` and `client/index.html` (title tag in head) from 'template' to \<your-project-name\>.**
-
-```
-git add .
-git commit -m "Init"
-git branch -M main
-git remote add origin <your-git-url>
-git push -u origin main
+npm start
 ```
 
-## Build, start and debug project
+## Page
+Webpage
 
-In advance all packages have to be installed.
-
+Development (with auto compile)
 ```
-npm install
-
-cd client
-npm install
-
-cd ../server
-npm install
+npm run watch
 ```
-
-Afterwards the **server** can be built and started `npm run build; npm start` or debugged `npm run watch` and the **client** built `npm run build` or debugged `npm run watch`.

@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"outDir": "dist",
+		"outDir": "built",
 		"moduleResolution": "node",
 		"target": "esnext",
 		"jsx": "react",
