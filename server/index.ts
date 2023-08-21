@@ -7,7 +7,7 @@ DbClient.connectedClient = new DbClient({});
 
 DbClient.connectedClient.connect().then(async () => {
 	const app = new ManagedServer();
-	
+
 	app.use(new StaticFileRoute('/', join(process.cwd(), '..', 'page', 'built')));
 	app.use(new StaticFileRoute('/assets', join(process.cwd(), '..', 'page', 'assets')));
 
@@ -15,4 +15,4 @@ DbClient.connectedClient.connect().then(async () => {
 	app.use(new StaticFileRoute('*', join(process.cwd(), '..', 'page', 'built', 'index.html')));
 
 	app.start(+process.env.PORT! || {{PORT}});
-}
+});
