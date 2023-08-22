@@ -4,4 +4,4 @@ WORKDIR /usr/src/app
 COPY . .
 
 WORKDIR /usr/src/app/server
-CMD [ "node", "built/server/index.js" ]
+CMD [ "node", "built/index.js" ]
