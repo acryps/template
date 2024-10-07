@@ -15,11 +15,12 @@ DbClient.connectedClient.connect().then(async () => {
 		DbContext: database
 	});
 
-	app.use(new StaticFileRoute('/', join(process.cwd(), '..', 'page', 'built')));
-	app.use(new StaticFileRoute('/assets', join(process.cwd(), '..', 'page', 'assets')));
+	app.use(new StaticFileRoute('/assets/', join(process.cwd(), '..', 'page', 'assets')));
+	app.use(new StaticFileRoute('/bundle/', join(process.cwd(), '..', 'page', '.built')));
 
 	app.prepareRoutes();
-	app.use(new StaticFileRoute('*', join(process.cwd(), '..', 'page', 'built', 'index.html')));
+	
+	app.use(new StaticFileRoute('*', join(process.cwd(), '..', 'page', 'assets', 'index.html')));
 
 	ViewModel.globalFetchingContext = database;
 

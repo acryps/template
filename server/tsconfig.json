@@ -1,8 +1,9 @@
 {
 	"compilerOptions": {
-		"outDir": "built",
-		"module": "CommonJS",
+		"outDir": ".built",
+		"module": "esnext",
 		"moduleResolution": "node",
-		"target": "es6"
+		"target": "es6",
+		"allowSyntheticDefaultImports": true
 	}
 }
