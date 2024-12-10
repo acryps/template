@@ -9,7 +9,7 @@ DbClient.connectedClient = new DbClient({});
 DbClient.connectedClient.connect().then(async () => {
 	const app = new ManagedServer();
 	const database = new DbContext(new RunContext());
-	
+
 	app.createInjector = context => new Inject({
 		Context: context,
 		DbContext: database
@@ -19,8 +19,8 @@ DbClient.connectedClient.connect().then(async () => {
 	app.use(new StaticFileRoute('/bundle/', join(process.cwd(), '..', 'page', '.built')));
 
 	app.prepareRoutes();
-	
-	app.use(new StaticFileRoute('*', join(process.cwd(), '..', 'page', 'assets', 'index.html')));
+
+	app.app.use('*', (request, response) => response.sendFile(join(process.cwd(), '..', 'page', 'assets', 'index.html')));
 
 	ViewModel.globalFetchingContext = database;
 

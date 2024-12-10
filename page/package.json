@@ -1,7 +1,7 @@
 {
 	"scripts": {
-		"watch": "npm run build:glyph && node build watch",
-		"build": "npm run build:glyph && node build bundle",
+		"watch": "node build watch",
+		"build": "node build bundle",
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {

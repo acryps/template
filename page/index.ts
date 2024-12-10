@@ -1,7 +1,7 @@
 import { Component, PathRouter, Router } from '@acryps/page';
 import { registerDirectives } from '@acryps/page-default-directives';
 import { PageComponent } from './page';
-import { HomeComponent } from './home';
+import { HomePage } from './home';
 import { applicationStyle } from './page.style';
 
 // injected by esbuild
@@ -13,17 +13,17 @@ export class Application {
 
 	static async main() {
 		this.router = new PathRouter(PageComponent
-			.route('/', HomeComponent)
+			.route('/', HomePage)
 		);
-		
+
 		registerDirectives(Component, this.router);
 
 		// load styles
 		applicationStyle().apply();
-		
+
 		// render application
 		this.router.host(document.body);
-		
+
 		// output build information
 		console.group(`build ${buildCommit}`);
 		console.log(`built ${buildDate}`);
